@@ -10,6 +10,12 @@ This is a React shopping cart app that displays the basic components of alerts, 
 git clone https://github.com/shanosha/mod-9-lab-1.git
 ```
 
+- Navigate to the directory.
+
+```
+cd mod-9-lab-1
+```
+
 - Install the node packages.
 
 ```

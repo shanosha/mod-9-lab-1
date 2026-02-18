@@ -2,7 +2,7 @@
 
 This is a React shopping cart app that displays the basic components of alerts, user profile, and product card. It also utilizes Tailwind for styling.
 
-## Usage
+## Setup and Usage
 
 - Clone the repository.
 
@@ -27,6 +27,8 @@ npm install
 ```
 npm run dev
 ```
+
+- Open the server URL in a browser.
 
 ## Reflections
 

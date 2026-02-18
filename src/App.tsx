@@ -5,7 +5,6 @@ import ProductDisplay from './components/ProductDisplay/ProductDisplay';
 
 function App() {
   
-  
   const user = {
     id: '1',
     name: 'John Doe',
@@ -58,7 +57,7 @@ function App() {
         </UserProfileCard>
 
       {/* Example usage of the ProductDisplay component. */}
-      
+
         <ProductDisplay
           product={product}
           showDescription={true}

@@ -1,4 +1,3 @@
-// types/index.ts
 export type AlertType = 'success' | 'error' | 'warning' | 'info';
  
 export interface AlertBoxProps {
@@ -8,7 +7,6 @@ export interface AlertBoxProps {
   children?: React.ReactNode;
 }
 
-// types/index.ts
 export interface User {
   id: string;
   name: string;
@@ -25,7 +23,6 @@ export interface UserProfileCardProps {
   children?: React.ReactNode;
 }
 
-// types/index.ts
 export interface Product {
   id: string;
   name: string;

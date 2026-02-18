@@ -2,16 +2,34 @@ import type { ProductDisplayProps } from "../../types";
 
 function ProductDisplay({ product, showDescription, showStockStatus, onAddToCart, children}:ProductDisplayProps){
     return (
-        <div className="flex flex-row gap-3.5 border border-gray-300 m-3.5">
-            {product.imageUrl && <div><img src={product.imageUrl} /></div>}
-            <div className="">
-                <p>Product ID: {product.id}</p>
-                <p>Product Name: {product.name}</p>
-                <p>Price: ${product.price}</p>
-                {showDescription && (<p>Description: {product.description}</p>)}
-                {showStockStatus && (<p>Stock Status: {product.inStock==true ? "In Stock" : "Out of Stock"}</p>)}
-                {onAddToCart && (<button onClick={()=>onAddToCart(product.id)} className="border border-gray-300 p-3.5 pt-1.5 pb-1.5">Add to Cart</button>)}
-                <div>
+        <div className="max-w-md m-4 border border-gray-200 rounded-lg shadow-md overflow-hidden">
+            {product.imageUrl && <img src={product.imageUrl} alt={product.name} className="w-full h-48 object-cover" />}
+            <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-900">
+                    {product.name}
+                </h3>
+                <p className="text-xl font-bold text-blue-600 mt-2">
+                    {product.price}
+                </p>
+                {showDescription && (
+                    <p className="text-gray-600 mt-2">
+                        {product.description}
+                    </p>
+                )}
+                {showStockStatus && (
+                    <p className="mt-2 text-green-600">
+                        {product.inStock==true ? "In Stock" : "Out of Stock"}
+                    </p>
+                )}
+                {onAddToCart && (
+                    <button
+                     onClick={()=>onAddToCart(product.id)}
+                     className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+                    >
+                        Add to Cart
+                    </button>
+                )}
+                <div className="mt-4">
                     {children}
                 </div>
             </div>

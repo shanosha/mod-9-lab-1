@@ -5,17 +5,35 @@ function UserProfileCard({user , showEmail, showRole, onEdit, children }:UserPro
     
     return (
         <>
-            <div className="flex flex-row gap-3.5 border border-gray-300 m-3.5">
-                {user.avatarUrl && <div><img src={user.avatarUrl} /></div>}
-                <div className="">
-                    <p>User ID: {user.id}</p>
-                    <p>User Name: {user.name}</p>
-                    {showEmail && (<p>Email: {user.email}</p>)}
-                    {showRole && (<p>Role: {user.role}</p>)}
-                    {onEdit && (<button onClick={()=>onEdit(user.id)} className="border border-gray-300 p-3.5 pt-1.5 pb-1.5">Edit</button>)}
-                    <div>
-                        {children}
+            <div className="max-w-md m-4 border border-gray-200 rounded-lg shadow-md p-6 max-w-sm">
+                <div className="flex items-center space-x-4">
+                    {user.avatarUrl && <div><img className="rounded-full" src={user.avatarUrl} /></div>}
+                    <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-gray-900">
+                            {user.name}
+                        </h3>
+                        {showEmail && (
+                            <p className="text-sm text-gray-600">
+                                {user.email}
+                            </p>
+                        )}
+                        {showRole && (
+                            <p className="text-sm text-gray-500">
+                                {user.role}
+                            </p>
+                        )}
                     </div>
+                </div>
+                {onEdit && (
+                    <button
+                        onClick={()=>onEdit(user.id)}
+                        className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors"
+                    >
+                        Edit User
+                    </button>
+                )}
+                <div className="mt-4">
+                    {children}
                 </div>
             </div>
         </>
